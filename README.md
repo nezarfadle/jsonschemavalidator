@@ -5,7 +5,7 @@
 
 # Usage
 
-Make sure that you import all the needed classes before every use caase:
+Make sure that you import all the needed classes:
 
 ```php
 use Json\Validation\JsonSchemaValidator;
@@ -72,8 +72,8 @@ EOL;
 $validator = new JsonSchemaValidator();
 
 $schema = [
-	'data.item1.item2.item3.item4' => new ObjectValidator(), // will validate that item4 is an object
-	'data.item1.item2.item3.item4.title' => new StringValueValidator() // will validate that item4.title is a string
+	'data.item1.item2.item3.item4' => new ObjectValidator(), // validate weather item4 is an object
+	'data.item1.item2.item3.item4.title' => new StringValueValidator() // validate weather item4.title is a string
 ];
 
 try {
@@ -135,10 +135,10 @@ EOL;
 $validator = new JsonSchemaValidator();
 
 $schema = [
-  'data' => new ObjectValidator(), // validate weather data is an object
-  'data.attributes' => new ObjectValidator(), // validate weather attributes is an object
-  'data.attributes.title' => new StringValueValidator(), // validate weather title is string
-  'data.attributes.src' => new StringValueValidator(), // validate weather src is string
+  'data' => new ObjectValidator(), // validate weather the data is an object
+  'data.attributes' => new ObjectValidator(), // validate weather the attributes is an object
+  'data.attributes.title' => new StringValueValidator(), // validate weather the title is string
+  'data.attributes.src' => new StringValueValidator(), // validate weather the src is string
 ];
 
 try {
