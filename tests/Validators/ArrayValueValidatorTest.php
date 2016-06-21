@@ -1,13 +1,13 @@
 <?php  
 
-use Json\Validation\Validators\JsonArrayValueValidator;
+use Json\Validation\Validators\ArrayValueValidator;
 
-class JsonArrayValueValidatorTest extends \PHPUnit_Framework_TestCase
+class ArrayValueValidatorTest extends \PHPUnit_Framework_TestCase
 {
 
 	public function test_ValidArrayValue_ShouldPass()
 	{
-		$uow = new JsonArrayValueValidator();
+		$uow = new ArrayValueValidator();
 		$uow->validate( 'fake attributeName', array() );
 	}
 
@@ -16,7 +16,7 @@ class JsonArrayValueValidatorTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function test_InvalidArrayValue_ShouldThrowException()
 	{
-		$uow = new JsonArrayValueValidator();
+		$uow = new ArrayValueValidator();
 		$uow->validate( 'fake attributeName', 'dummy text');
 	}
 

@@ -1,19 +1,19 @@
 <?php  
 
-use Json\Validation\JsonValidatorsRunner;
-use Json\Validation\Validators\JsonStringValueValidator;
-use Json\Validation\Validators\JsonNumericValueValidator;
-use Json\Validation\Validators\JsonObjectValidator;
+use Json\Validation\JsonSchemaValidator;
+use Json\Validation\Validators\StringValueValidator;
+use Json\Validation\Validators\NumericValueValidator;
+use Json\Validation\Validators\ObjectValidator;
 use Json\Validation\Utils\ArrayUtil;
 
-class JsonValidatorsRunnerTest extends \PHPUnit_Framework_TestCase
+class JsonSchemaValidatorTest extends \PHPUnit_Framework_TestCase
 {
 
 	private $uow; 
 	
 	public function setup()
 	{
-		$this->uow = new JsonValidator();
+		$this->uow = new JsonSchemaValidator();
 	}
 
 	/**
@@ -24,7 +24,7 @@ class JsonValidatorsRunnerTest extends \PHPUnit_Framework_TestCase
 		// $this->markTestSkipped();
 		$jsonPayload = "dummy text";
 		$schema = [
-			"title" => new JsonStringValueValidator()
+			"title" => new StringValueValidator()
 		];
 
 		$this->uow->validate( $jsonPayload, $schema );
@@ -38,7 +38,7 @@ class JsonValidatorsRunnerTest extends \PHPUnit_Framework_TestCase
 		// $this->markTestSkipped();
 		$jsonPayload = '{"id" : 1}';
 		$schema = [
-			"title" => new JsonStringValueValidator()
+			"title" => new StringValueValidator()
 		];
 
 		$this->uow->validate( $jsonPayload, $schema );
@@ -49,7 +49,7 @@ class JsonValidatorsRunnerTest extends \PHPUnit_Framework_TestCase
 		// $this->markTestSkipped();
 		$jsonPayload = '{"name" : "fake name"}';
 		$schema = [
-			"name" => new JsonStringValueValidator()
+			"name" => new StringValueValidator()
 		];
 
 		$this->uow->validate( $jsonPayload, $schema );
@@ -62,7 +62,7 @@ class JsonValidatorsRunnerTest extends \PHPUnit_Framework_TestCase
 	{
 		$jsonPayload = "{}";
 		$schema = [
-			"title" => new JsonStringValueValidator()
+			"title" => new StringValueValidator()
 		];
 
 		$this->uow->validate( $jsonPayload, $schema );
@@ -82,11 +82,11 @@ class JsonValidatorsRunnerTest extends \PHPUnit_Framework_TestCase
 			}
 EOL;
 		$schema = [
-			'data' => new JsonObjectValidator(),
-			'data.attributes' => new JsonObjectValidator(),
-			'data.attributes.title' => new JsonStringValueValidator(),
-			'data.attributes.content' => new JsonStringValueValidator(),
-			'data.attributes.content' => new JsonStringValueValidator(),
+			'data' => new ObjectValidator(),
+			'data.attributes' => new ObjectValidator(),
+			'data.attributes.title' => new StringValueValidator(),
+			'data.attributes.content' => new StringValueValidator(),
+			'data.attributes.content' => new StringValueValidator(),
 		];
 		
 		$this->uow->validate($jsonPayload, $schema);
@@ -114,11 +114,11 @@ EOL;
 			}
 EOL;
 		$schema = [
-			'data' => new JsonObjectValidator(),
-			'data.attributes' => new JsonObjectValidator(),
-			'data.attributes.item1.item2.item3.item4' => new JsonObjectValidator(),
-			'data.attributes.item1.item2.item3.item4.title' => new JsonStringValueValidator(),
-			'data.attributes.content' => new JsonStringValueValidator(),
+			'data' => new ObjectValidator(),
+			'data.attributes' => new ObjectValidator(),
+			'data.attributes.item1.item2.item3.item4' => new ObjectValidator(),
+			'data.attributes.item1.item2.item3.item4.title' => new StringValueValidator(),
+			'data.attributes.content' => new StringValueValidator(),
 		];
 		
 		$this->uow->validate($jsonPayload, $schema);

@@ -1,14 +1,14 @@
 <?php  
 
-use Json\Validation\Validators\JsonNumericValueValidator;
+use Json\Validation\Validators\NumericValueValidator;
 
-class JsonNumericValueValidatorTest extends \PHPUnit_Framework_TestCase
+class NumericValueValidatorTest extends \PHPUnit_Framework_TestCase
 {
 
 	
 	public function test_ValidNumericValue_ShouldPass()
 	{
-		$uow = new JsonNumericValueValidator();
+		$uow = new NumericValueValidator();
 		$uow->validate( 'fake attributeName', '12');
 	}
 
@@ -17,7 +17,7 @@ class JsonNumericValueValidatorTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function test_InvalidNumericValue_ShouldThrowException()
 	{
-		$uow = new JsonNumericValueValidator();
+		$uow = new NumericValueValidator();
 		$uow->validate( 'fake attributeName', 'dummy text');
 	}
 

@@ -1,14 +1,14 @@
 <?php  
 
-use Json\Validation\Validators\JsonStringValueValidator;
+use Json\Validation\Validators\StringValueValidator;
 
-class JsonStringValueValidatorTest extends \PHPUnit_Framework_TestCase
+class StringValueValidatorTest extends \PHPUnit_Framework_TestCase
 {
 
 	
 	public function test_ValidStringValue_ShouldPass()
 	{
-		$uow = new JsonStringValueValidator();
+		$uow = new StringValueValidator();
 		$uow->validate( 'fake attributeName', "dummy text");
 	}
 
@@ -17,7 +17,7 @@ class JsonStringValueValidatorTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function test_InvalidStringValue_ShouldThrowException()
 	{
-		$uow = new JsonStringValueValidator();
+		$uow = new StringValueValidator();
 		$uow->validate( 'fake attributeName', 1);
 	}
 

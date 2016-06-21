@@ -1,13 +1,13 @@
 <?php  
 
-use Json\Validation\Validators\JsonObjectValidator;
+use Json\Validation\Validators\ObjectValidator;
 
-class JsonObjectValidatorTest extends \PHPUnit_Framework_TestCase
+class ObjectValidatorTest extends \PHPUnit_Framework_TestCase
 {
 
 	public function test_ValidObject_ShouldPass()
 	{
-		$uow = new JsonObjectValidator();
+		$uow = new ObjectValidator();
 		$uow->validate( 'fake attributeName', new StdClass() );
 	}
 
@@ -16,7 +16,7 @@ class JsonObjectValidatorTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function test_InvalidObject_ShouldThrowException()
 	{
-		$uow = new JsonObjectValidator();
+		$uow = new ObjectValidator();
 		$uow->validate( 'fake attributeName', 'dummy text');
 	}
 

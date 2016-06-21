@@ -15,7 +15,7 @@ use Json\Validation\Utils\JsonSerializer;
  * This class is working as a Json Validators Runner
  */
 
-class JsonValidator
+class JsonSchemaValidator
 {
 
 	private $serialzer, $arrayutil, $objectutil;
