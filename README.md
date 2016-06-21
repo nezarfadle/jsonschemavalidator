@@ -1,5 +1,8 @@
 # Json Schema Validator
 
+# Installation
+```composer require nezarfadle/jsonschemavalidator```
+
 # Usage
 
 Make sure that you import all the needed classes before every use caase:
