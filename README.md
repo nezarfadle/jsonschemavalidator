@@ -1,4 +1,4 @@
-# Json Schema Validator
+# PHP Json Schema Validator
 
 # Installation
 ```composer require nezarfadle/jsonschemavalidator```
