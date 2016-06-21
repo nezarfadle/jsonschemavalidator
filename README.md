@@ -151,7 +151,7 @@ catch (\InvalidArgumentException $e) {}
 catch (NotExistsPropertyException $e) {}
 ```
 
-## How to write your own Assertion class [](#CreateYourOwnAssertionClass)
+## How to write your own Assertion class [](#createcourownassertionclass)
 
 1. You have to implement ```php Json\Validation\Interfaces\IJsonValidator```
 
@@ -217,7 +217,7 @@ Json\Validation\JsonSchemaValidator
 Json\Validation\Interfaces\IJsonSchemaValidator
 ```
 
-### Assertion Classes ( more will be added in future or [#CreateYourOwnAssertionClass](take a look at how you can create your own assertion class)
+### Assertion Classes ( more will be added in future or [#createcourownassertionclass](take a look at how you can create your own assertion class)
 ```php
 Json\Validation\Validators\ArrayValueValidator
 Json\Validation\Validators\NumericValueValidator
