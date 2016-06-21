@@ -288,4 +288,4 @@ $validator->validate( $json, $schema ); // NotExistsPropertyException will be th
 ```
 
 # How to run the test
-```phpunit```
+``` phpunit ```
