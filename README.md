@@ -217,7 +217,7 @@ Json\Validation\JsonSchemaValidator
 Json\Validation\Interfaces\IJsonSchemaValidator
 ```
 
-### Assertion Classes ( more will be added in future or [#how-to-write-your-own-assertion-class](take a look at how you can create your own assertion class)
+### Assertion Classes ( more will be added in future or [#how-to-write-your-own-assertion-class](take a look at how you can create your own assertion class) )
 ```php
 Json\Validation\Validators\ArrayValueValidator
 Json\Validation\Validators\NumericValueValidator
