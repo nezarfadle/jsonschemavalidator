@@ -13,7 +13,7 @@ class JsonValidatorsRunnerTest extends \PHPUnit_Framework_TestCase
 	
 	public function setup()
 	{
-		$this->uow = new JsonValidatorsRunner();
+		$this->uow = new JsonValidator();
 	}
 
 	/**

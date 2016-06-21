@@ -10,12 +10,12 @@ use Json\Validation\Utils\JsonSerializer;
 
 
 /**
- * JsonValidatorsRunner
+ * JsonValidator
  * 
  * This class is working as a Json Validators Runner
  */
 
-class JsonValidatorsRunner
+class JsonValidator
 {
 
 	private $serialzer, $arrayutil, $objectutil;
