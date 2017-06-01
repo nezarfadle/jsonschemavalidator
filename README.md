@@ -34,7 +34,7 @@ EOL;
 $validator = new JsonSchemaValidator();
 
 $schema = [
-	'id' => new NumericValueValidator() // validate weather the id is numeric or not
+	'id' => new NumericValueValidator() // validate whether the id is numeric or not
 ];
 
 try {
@@ -72,8 +72,8 @@ EOL;
 $validator = new JsonSchemaValidator();
 
 $schema = [
-	'data.item1.item2.item3.item4' => new ObjectValidator(), // validate weather item4 is an object
-	'data.item1.item2.item3.item4.title' => new StringValueValidator() // validate weather item4.title is a string
+	'data.item1.item2.item3.item4' => new ObjectValidator(), // validate whether item4 is an object
+	'data.item1.item2.item3.item4.title' => new StringValueValidator() // validate whether item4.title is a string
 ];
 
 try {
@@ -135,10 +135,10 @@ EOL;
 $validator = new JsonSchemaValidator();
 
 $schema = [
-  'data' => new ObjectValidator(), // validate weather the data is an object
-  'data.attributes' => new ObjectValidator(), // validate weather the attributes is an object
-  'data.attributes.title' => new StringValueValidator(), // validate weather the title is string
-  'data.attributes.src' => new StringValueValidator(), // validate weather the src is string
+  'data' => new ObjectValidator(), // validate whether the data is an object
+  'data.attributes' => new ObjectValidator(), // validate whether the attributes is an object
+  'data.attributes.title' => new StringValueValidator(), // validate whether the title is string
+  'data.attributes.src' => new StringValueValidator(), // validate whether the src is string
 ];
 
 try {
